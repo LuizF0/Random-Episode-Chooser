@@ -5,7 +5,7 @@ I intend to update it as i learn new cool stuff
 
 ##Here is the code:
 
-'''
+```
 import lib.collection as c
 import lib.menu as m
 import lib.randomizer as r
@@ -71,4 +71,4 @@ try:
 
 except Exception as e:
 	print(e)
-'''
+```
