@@ -1,9 +1,10 @@
 # Project 1:
 
-This is my first Python project
+This is my first Python project.
+
 I intend to update it as i learn new cool stuff
 
-##Here is the code:
+## Here is the code:
 
 ```
 import lib.collection as c
