@@ -1,4 +1,3 @@
-#To-do: return to menu option and add def functions.
 import lib.collection as c
 import lib.menu as m
 import lib.randomizer as r
