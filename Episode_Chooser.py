@@ -1,19 +1,16 @@
-import lib.collection as c
-import lib.menu as m
-import lib.randomizer as r
-import lib.repeater as x
+import lib.modules as m
 
 try:
 	print('''
 			______________________________________
 			Welcome to the Random Episode Chooser!
 				''')
-	m.menu()
+	m.Modules.menu()
 
 	option = int(input('\nChoose your number: _ '))-1
 
 	if option == 0:
-		Shows = list(c.Collection().keys())
+		Shows = list(m.Modules.collection().keys())
 
 		print('\n')
 		for number, values in enumerate(Shows, 1):
@@ -31,8 +28,8 @@ try:
 			else:
 				selectedShow = Shows[nselected]
 					
-				r.randomizer(selectedShow)
-				x.repeat(selectedShow)
+				m.Modules.randomizer(selectedShow)
+				m.Modules.repeat(selectedShow)
 		
 	elif option == 1:
 		addShow = input('\nDo you want to add a new show?(Yes/No) _ ').lower()
@@ -45,7 +42,7 @@ try:
 
 			dict2 = {newShow:[newShow_s, newShow_e]}
 			
-			with open('lib/collection.py','a') as f:
+			with open('lib/modules.py','a') as f:
 				f.write('\ndict1.update('+str(dict2)+')')
 				f.close()
 			
@@ -62,4 +59,4 @@ try:
 		print('\nNot an option')
 
 except Exception as e:
-	print(e)
+	print('\nExiting.', e)
