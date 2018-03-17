@@ -5,7 +5,7 @@ try:
 			______________________________________
 			Welcome to the Random Episode Chooser!
 				''')
-	m.Modules.menu()
+	m.menu()
 
 	repeat_1 = 0
 	while repeat_1 == 0:
@@ -29,8 +29,8 @@ try:
 				else:
 					selectedShow = Shows[nselected]
 						
-					m.Modules.randomizer(selectedShow)
-					m.Modules.repeater(selectedShow)
+					m.randomizer(selectedShow)
+					m.repeater(selectedShow)
 			break
 			
 		elif option == 1:
