@@ -29,7 +29,7 @@ class Modules():
 
 		print('\n\nYou selected:', trying,'S', r_season,'E', r_episode)
 
-	def repeat(selectedShow):
+	def repeater(selectedShow):
 		repeat = 0
 		while repeat == 0:
 			another_ep = input('\nDo you want another episode?(Yes/No) _ ').lower()
