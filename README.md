@@ -16,7 +16,7 @@ try:
 			______________________________________
 			Welcome to the Random Episode Chooser!
 				''')
-	m.Modules.menu()
+	m.menu()
 
 	repeat_1 = 0
 	while repeat_1 == 0:
@@ -40,8 +40,8 @@ try:
 				else:
 					selectedShow = Shows[nselected]
 						
-					m.Modules.randomizer(selectedShow)
-					m.Modules.repeater(selectedShow)
+					m.randomizer(selectedShow)
+					m.repeater(selectedShow)
 			break
 			
 		elif option == 1:
@@ -104,8 +104,8 @@ class Modules():
 	trying = 0
 	def randomizer(trying):
 		
-		Season = Modules.collection()[trying][0]
-		Episode = Modules.collection()[trying][1]	
+		Season = collection()[trying][0]
+		Episode = collection()[trying][1]	
 		
 		r_season = random.randint(1, Season)
 		r_episode = random.randint(1, Episode)
@@ -117,7 +117,7 @@ class Modules():
 		while repeat == 0:
 			another_ep = input('\nDo you want another episode?(Yes/No) _ ').lower()
 			if another_ep == 'yes':
-				Modules.randomizer(selectedShow)
+				randomizer(selectedShow)
 			elif another_ep == 'no':
 				print('\nOK.')
 				break
