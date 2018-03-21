@@ -19,18 +19,16 @@ def menu():
 
 trying = 0
 def randomizer(trying):
-		
 	Season = collection()[trying][0]
 	Episode = collection()[trying][1]	
 		
 	r_season = random.randint(1, Season)
 	r_episode = random.randint(1, Episode)
 
-	print('\n\nYou selected:', trying,'S', r_season,'E', r_episode)
+	print('\n\nYou selected: S%s E%s' % trying, r_season, r_episode)
 
 def repeater(selectedShow):
-	repeat = 0
-	while repeat == 0:
+	while True:
 		another_ep = input('\nDo you want another episode?(Yes/No) _ ').lower()
 		if another_ep == 'yes':
 			randomizer(selectedShow)
