@@ -18,35 +18,29 @@ try:
 				''')
 	m.menu()
 
-	repeat_1 = 0
-	while repeat_1 == 0:
+	while True:
 		option = int(input('\nChoose your number: _ '))-1
 
 		if option == 0:
-			Shows = list(m.Modules.collection().keys())
+			Shows = list(m.collection().keys())
 
 			print('\n')
 			for number, values in enumerate(Shows, 1):
 				print(number, values)
 
-			nselected = []
-			while nselected == []:
+			while True:
 				nselected = int(input('\nChoose your show\'s number(or anything else to quit): _ '))-1
-				
 				if nselected > len(Shows):
 					print('Wrong number, please choose again.')
 					nselected = []
-					
+
 				else:
-					selectedShow = Shows[nselected]
-						
-					m.randomizer(selectedShow)
-					m.repeater(selectedShow)
+					m.randomizer(Shows[nselected])
+					m.repeater(Shows[nselected])
 			break
-			
+
 		elif option == 1:
-			repeat_2 = 0
-			while repeat_2 == 0:
+			while True:
 				addShow = input('\nDo you want to add a new show?(Yes/No) _ ').lower()
 
 				if addShow == 'yes':
@@ -58,9 +52,10 @@ try:
 					dict2 = {newShow:[newShow_s, newShow_e]}
 					
 					with open('lib/modules.py','a') as f:
-						f.write('\ndict1.update('+str(dict2)+')')
+						f.write('\ndict1.update( %s )' % str(dict2))
 						f.close()
-					
+					break
+
 				elif addShow == 'no':
 					print('\nOK.')
 					break
@@ -102,18 +97,16 @@ def menu():
 
 trying = 0
 def randomizer(trying):
-		
 	Season = collection()[trying][0]
 	Episode = collection()[trying][1]	
 		
 	r_season = random.randint(1, Season)
 	r_episode = random.randint(1, Episode)
 
-	print('\n\nYou selected:', trying,'S', r_season,'E', r_episode)
+	print('\n\nYou selected: S%s E%s' % trying, r_season, r_episode)
 
 def repeater(selectedShow):
-	repeat = 0
-	while repeat == 0:
+	while True:
 		another_ep = input('\nDo you want another episode?(Yes/No) _ ').lower()
 		if another_ep == 'yes':
 			randomizer(selectedShow)
