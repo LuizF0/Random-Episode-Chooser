@@ -103,7 +103,7 @@ def randomizer(trying):
 	r_season = random.randint(1, Season)
 	r_episode = random.randint(1, Episode)
 
-	print('\n\nYou selected: S%s E%s' % trying, r_season, r_episode)
+	print('\n\nYou selected: S%s E%s' %(trying, r_season, r_episode))
 
 def repeater(selectedShow):
 	while True:
